@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included>
+
+	<logger name="test.logger" level="${logback.test.log.level:-INFO}" additivity="false">
+		<appender-ref ref="${test.logger.appender-ref:-CONSOLE}"/>
+		<appender-ref ref="TestAppender"/>
+	</logger>
+
+</included>
