@@ -15,6 +15,7 @@
 	</description>
 
 	<properties>
+		<maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 		<maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
@@ -73,6 +74,24 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven-surefire-plugin.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>${maven-antrun-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>antrun-plugin-echo</id>
+						<phase>validate</phase>
+						<goals><goal>run</goal></goals>
+						<configuration>
+							<target>
+								<echo message="SLF4J version: ${slf4j.version}"/>
+								<echo message="Logback version: ${logback.version}"/>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
