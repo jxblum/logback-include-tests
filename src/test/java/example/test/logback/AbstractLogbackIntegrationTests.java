@@ -61,7 +61,8 @@ public abstract class AbstractLogbackIntegrationTests {
 		return LOGBACK_LOGGER_TYPE.cast(slf4jLogger);
 	}
 
-	protected static void assertLogbackLoggerConfiguration(LoggerContext loggerContext, String... loggerNames) {
+	protected static LoggerContext assertLogbackLoggerConfiguration(LoggerContext loggerContext,
+			String... loggerNames) {
 
 		List<String> configuredLoggerNames = nullSafeList(loggerContext.getLoggerList()).stream()
 			.filter(Objects::nonNull)
@@ -70,10 +71,12 @@ public abstract class AbstractLogbackIntegrationTests {
 			.toList();
 
 		assertThat(configuredLoggerNames).contains(loggerNames);
+
+		return loggerContext;
 	}
 
-	protected static void assertLoggerAppenderConfiguration(ch.qos.logback.classic.Logger logbackLogger,
-		String... appenderNames) {
+	protected static ch.qos.logback.classic.Logger assertLogbackLoggerAppenderConfiguration(
+			ch.qos.logback.classic.Logger logbackLogger, String... appenderNames) {
 
 		Spliterator<Appender<?>> configuredTestLoggerAppenders =
 			Spliterators.spliteratorUnknownSize(logbackLogger.iteratorForAppenders(), Spliterator.NONNULL);
@@ -86,6 +89,8 @@ public abstract class AbstractLogbackIntegrationTests {
 				.toList();
 
 		assertThat(configuredTestLoggerAppenderNames).contains(appenderNames);
+
+		return logbackLogger;
 	}
 
 	private static boolean hasText(String value) {

@@ -57,6 +57,6 @@ public class LogbackConfigurationIntegrationTests extends AbstractLogbackIntegra
 		ch.qos.logback.classic.Logger logbackTestLogger =
 			assertLogbackLogger(testLogger, "test.logger", Level.INFO);
 
-		assertLoggerAppenderConfiguration(logbackTestLogger, "CONSOLE", "TestAppender");
+		assertLogbackLoggerAppenderConfiguration(logbackTestLogger, "CONSOLE", "TestAppender");
 	}
 }

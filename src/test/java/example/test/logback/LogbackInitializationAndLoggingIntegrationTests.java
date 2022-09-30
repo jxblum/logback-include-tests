@@ -61,7 +61,7 @@ public class LogbackInitializationAndLoggingIntegrationTests extends AbstractLog
 
 	@Test
 	public void loggerConfigurationIsCorrect() {
-		assertLoggerAppenderConfiguration(assertLogbackLogger(this.testLogger, "test.logger", Level.INFO),
+		assertLogbackLoggerAppenderConfiguration(assertLogbackLogger(this.testLogger, "test.logger", Level.INFO),
 			"TestAppender");
 	}
 
