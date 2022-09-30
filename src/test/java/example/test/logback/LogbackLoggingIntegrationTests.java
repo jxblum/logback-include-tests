@@ -28,15 +28,16 @@ import example.test.logback.appender.TestAppender;
 
 /**
  * Integration Tests for Logback {@link Logger} asserting the proper {@link String log message} are logged
- * based on the configured {@link Level log level}.
+ * at the configured {@link Level log level}.
  *
  * @author John Blum
  * @see org.junit.jupiter.api.Test
  * @see org.slf4j.Logger
  * @see ch.qos.logback.classic.Level
+ * @see example.test.logback.AbstractLogbackIntegrationTests
  * @since 0.1.0
  */
-public class LogbackLoggingIntegrationTests {
+public class LogbackLoggingIntegrationTests extends AbstractLogbackIntegrationTests {
 
 	private final Logger testLogger = LoggerFactory.getLogger("test.logger");
 
