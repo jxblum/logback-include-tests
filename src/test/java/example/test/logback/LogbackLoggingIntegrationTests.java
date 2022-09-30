@@ -58,5 +58,6 @@ public class LogbackLoggingIntegrationTests {
 		assertThat(this.testAppender.lastLogMessage()).isEqualTo("INFO TEST");
 		assertThat(this.testAppender.lastLogMessage()).isEqualTo("WARN TEST");
 		assertThat(this.testAppender.lastLogMessage()).isEqualTo("ERROR TEST");
+		assertThat(this.testAppender.lastLogMessage()).isNull();
 	}
 }
