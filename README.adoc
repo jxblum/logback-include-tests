@@ -1,19 +1,19 @@
 = Example Test Project for SLF4J and Logback
 
-This Maven-based Java project tests and asserts the configuration of SLF4J `2.0.x` vs. SLF4J `1.7.x`
-and Logback `1.4.x` vs. Logback `1.2.x`.
+This Java, Maven-based project tests and asserts the configuration as well as the logging behavior
+of SLF4J `2.0.x` with Logback `1.4.x` vs. SLF4J `1.7.x` with Logback `1.2.x`.
 
-Specifically, this test projects asserts the configuration and functionality when using
-the `<include>` configuration directive to compose Logback XML-based configuration files.
+Specifically, this test project asserts the configuration of Logback and functionality of SLF4J logging
+when using the `<include>` configuration directive to compose Logback XML-based configuration files.
 
-You can run this project (tests) with SLF4J `1.7.x` (`1.7.36`) and Logback `1.2.x` (`1.2.11`) using:
+This project and its tests can be run with SLF4J `1.7.x` (`1.7.36`) and Logback `1.2.x` (`1.2.11`) using:
 
 .Maven build
 ----
 $ mvn clean package
 ----
 
-Or, using SLF4J `2.0.x` (`2.0.2`) and Logback `1.4.x` (`1.4.1`):
+Or, or run with SLF4J `2.0.x` (`2.0.2`) and Logback `1.4.x` (`1.4.1`) using:
 
 .Maven build
 ----
