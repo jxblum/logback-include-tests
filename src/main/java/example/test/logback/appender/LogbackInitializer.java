@@ -31,7 +31,7 @@ public abstract class LogbackInitializer {
 	public static LoggerContext initialize(LoggerContext loggerContext) {
 
 		try {
-			loggerContext.reset();
+			loggerContext.stop();
 			new ContextInitializer(loggerContext).autoConfig();
 			return loggerContext;
 		}
