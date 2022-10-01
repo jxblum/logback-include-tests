@@ -54,6 +54,8 @@ public class LogbackInitializationAndLoggingIntegrationTests extends AbstractLog
 
 		LogbackInitializer.initialize(loggerContext);
 
+		assertLogbackLoggerConfiguration(loggerContext, Logger.ROOT_LOGGER_NAME, "test.logger");
+
 		testAppender = TestAppender.getInstance();
 	}
 
