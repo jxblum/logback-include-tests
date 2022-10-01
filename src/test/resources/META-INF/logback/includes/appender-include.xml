@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <included>
 
-	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder>
-			<charset>UTF-8</charset>
-			<pattern>%d %5p %40.40c:%4L - %msg%n</pattern>
-		</encoder>
-	</appender>
+	<if condition='property("consoleLoggingEnabled").equals("true")'>
+		<then>
+			<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+				<encoder>
+					<charset>UTF-8</charset>
+					<pattern>%d %5p %40.40c:%4L - %msg%n</pattern>
+				</encoder>
+			</appender>
+		</then>
+	</if>
 
 	<appender name="TestAppender" class="example.test.logback.appender.TestAppender"/>
 

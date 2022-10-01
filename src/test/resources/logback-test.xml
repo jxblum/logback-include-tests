@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
 
+	<!-- Setting this variable to 'false' causes the test to fail! -->
+	<variable name="consoleLoggingEnabled" value="true"/>
+
 	<include resource="META-INF/logback/includes/appender-include.xml"/>
 	<include resource="META-INF/logback/includes/logger-include.xml"/>
 
