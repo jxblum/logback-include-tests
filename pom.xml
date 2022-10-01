@@ -21,8 +21,8 @@
 		<maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
 		<assertj-core>3.23.1</assertj-core>
 		<junit-bom.version>5.9.1</junit-bom.version>
-		<logback.version>1.2.11</logback.version>
-		<slf4j.version>1.7.36</slf4j.version>
+		<logback.version>1.4.1</logback.version>
+		<slf4j.version>2.0.2</slf4j.version>
 	</properties>
 
 	<dependencyManagement>
@@ -99,12 +99,16 @@
 	<profiles>
 		<profile>
 			<id>logback12x</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
+			<properties>
+				<slf4j.version>1.7.36</slf4j.version>
+				<logback.version>1.2.11</logback.version>
+			</properties>
 		</profile>
 		<profile>
 			<id>logback14x</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<properties>
 				<slf4j.version>2.0.2</slf4j.version>
 				<logback.version>1.4.1</logback.version>
